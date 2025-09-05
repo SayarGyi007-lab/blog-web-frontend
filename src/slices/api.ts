@@ -15,14 +15,3 @@ export const apiSlice = createApi({
     endpoints: () => ({})
 })
 
-// export const apiSlice = createApi({
-//     reducerPath: 'apiSlice',
-//     baseQuery: fetchBaseQuery({
-//         baseUrl: `${baseUrl}`,
-//         credentials: "include",
-        
-//     }),
-//     endpoints: () => ({}),
-    
-// })
-
