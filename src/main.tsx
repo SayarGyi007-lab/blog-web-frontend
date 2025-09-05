@@ -11,67 +11,30 @@ import CreatePost from './pages/post/CreatePost.tsx'
 import GlobalFeed from './pages/post/GlobalFeed.tsx'
 
 
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Main/>,
-//     children: [
-//       {
-//         index: true,
-//         element: <GlobalFeed/>
-//       },
-//       {
-//         path: "/register",
-//         element: <Register/>
-//       },
-//       {
-//         path: "/login",
-//         element: <Login/>
-//       },
-//       {
-//         path: "/post/create",
-//         element: <CreatePost/>
-//       }
-     
-//     ]
-    
-//   }
-// ])
-
-// createRoot(document.getElementById('root')!).render(
-//   <StrictMode>
-//     <Provider store={store}>
-//     <RouterProvider router={router}/>
-//     </Provider>
-//   </StrictMode>,
-// )
-
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main />,
+    element: <Main/>,
     children: [
       {
-        index: true, // default route when path="/"
-        element: <Login />
+        index: true,
+        element: <GlobalFeed/>
       },
       {
         path: "/register",
-        element: <Register />
+        element: <Register/>
       },
       {
         path: "/login",
-        element: <Login />
+        element: <Login/>
       },
       {
         path: "/post/create",
-        element: <CreatePost />
-      },
-      {
-        path: "/feed",
-        element: <GlobalFeed />
+        element: <CreatePost/>
       }
+     
     ]
+    
   }
 ])
 
@@ -82,3 +45,40 @@ createRoot(document.getElementById('root')!).render(
     </Provider>
   </StrictMode>,
 )
+
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Main />,
+//     children: [
+//       {
+//         index: true, // default route when path="/"
+//         element: <Login />
+//       },
+//       {
+//         path: "/register",
+//         element: <Register />
+//       },
+//       {
+//         path: "/login",
+//         element: <Login />
+//       },
+//       {
+//         path: "/post/create",
+//         element: <CreatePost />
+//       },
+//       {
+//         path: "/feed",
+//         element: <GlobalFeed />
+//       }
+//     ]
+//   }
+// ])
+
+// createRoot(document.getElementById('root')!).render(
+//   <StrictMode>
+//     <Provider store={store}>
+//     <RouterProvider router={router}/>
+//     </Provider>
+//   </StrictMode>,
+// )
