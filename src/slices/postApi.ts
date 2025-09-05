@@ -34,6 +34,7 @@ export const postApiSlice = apiSlice.injectEndpoints({
               url: "/post/create",
               method: "POST",
               body: data,
+              credentials: "include"
             }),
           }),
         deletePost: builder.mutation<{ message: string }, string>({
