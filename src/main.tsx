@@ -1,69 +1,84 @@
-import { StrictMode, useEffect, useState } from 'react';
-import { createRoot } from 'react-dom/client';
-import './index.css';
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { store } from './store.ts'
+import Main from './layouts/Main.tsx'
+import Register from './pages/user/Register.tsx'
+import Login from './pages/user/Login.tsx'
+import CreatePost from './pages/post/CreatePost.tsx'
+import GlobalFeed from './pages/post/GlobalFeed.tsx'
 
-import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { store } from './store.ts';
-import Main from './layouts/Main.tsx';
-import Register from './pages/user/Register.tsx';
-import Login from './pages/user/Login.tsx';
-import CreatePost from './pages/post/CreatePost.tsx';
-import GlobalFeed from './pages/post/GlobalFeed.tsx';
-import type { JSX } from 'react/jsx-runtime';
 
-// -------------------- PrivateRoute --------------------
-const PrivateRoute = ({ children }: { children: JSX.Element }) => {
-  const [loading, setLoading] = useState(true);
-  const [authenticated, setAuthenticated] = useState(false);
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Main/>,
+//     children: [
+//       {
+//         index: true,
+//         element: <GlobalFeed/>
+//       },
+//       {
+//         path: "/register",
+//         element: <Register/>
+//       },
+//       {
+//         path: "/login",
+//         element: <Login/>
+//       },
+//       {
+//         path: "/post/create",
+//         element: <CreatePost/>
+//       }
+     
+//     ]
+    
+//   }
+// ])
 
-  useEffect(() => {
-    const token = localStorage.getItem('token'); // adjust if you store auth differently
-    setAuthenticated(!!token);
-    setLoading(false);
-  }, []);
+// createRoot(document.getElementById('root')!).render(
+//   <StrictMode>
+//     <Provider store={store}>
+//     <RouterProvider router={router}/>
+//     </Provider>
+//   </StrictMode>,
+// )
 
-  if (loading) return <div>Loading...</div>; // optional: spinner
-  if (!authenticated) return <Navigate to="/login" replace />;
-
-  return children;
-};
-
-// -------------------- Router --------------------
 const router = createBrowserRouter([
   {
-    path: "/login",
-    element: <Login />
-  },
-  {
-    path: "/register",
-    element: <Register />
-  },
-  {
     path: "/",
-    element: (
-      <PrivateRoute>
-        <Main />
-      </PrivateRoute>
-    ),
+    element: <Main />,
     children: [
       {
-        index: true,
-        element: <GlobalFeed />
+        index: true, // default route when path="/"
+        element: <Login />
       },
       {
-        path: "post/create",
+        path: "/register",
+        element: <Register />
+      },
+      {
+        path: "/login",
+        element: <Login />
+      },
+      {
+        path: "/post/create",
         element: <CreatePost />
+      },
+      {
+        path: "/feed",
+        element: <GlobalFeed />
       }
     ]
   }
-]);
+])
 
-// -------------------- Render --------------------
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} />
+    <RouterProvider router={router}/>
     </Provider>
-  </StrictMode>
-);
+  </StrictMode>,
+)
