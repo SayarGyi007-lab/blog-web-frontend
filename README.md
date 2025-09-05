@@ -1,69 +1,36 @@
-# React + TypeScript + Vite
+# 💻 Blog Web Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##In Progress
 
-Currently, two official plugins are available:
+**Built with React + Vite | Redux Toolkit + RTK Query | TypeScript | CSS**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is the frontend of a full-stack blog platform, allowing users to register, login, create posts, view the global feed, like/share posts, and interact with other users. The frontend is deployed on **Vercel** and communicates with a backend API deployed on **Render**.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🌐 Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 1. User Functionality
+- Register and login with JWT authentication  
+- Create, edit, and delete posts (with images and tags)  
+- View global feed of all posts  
+- Like and share posts  
+- Protected routes for authenticated users  
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### 2. Frontend Functionality
+- Landing page is global feed; need to login to post
+- Form handling using React Hook Form and TypeScript  
+- State management with Redux Toolkit and RTK Query  
+- Responsive UI for desktop and mobile  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 3. API Integration
+- Connects to backend API on Render for user and post management  
+- Handles cross-origin requests with credentials for authentication (In progress) 
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🔗 Links
+- **Backend API Server:** [blog-backend-9f0r.onrender.com](https://blog-backend-9f0r.onrender.com)  
+- **Frontend (Live on Vercel):** [blog-web-frontend-gilt.vercel.app](https://blog-web-frontend-gilt.vercel.app/)  
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
