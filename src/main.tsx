@@ -14,30 +14,27 @@ import GlobalFeed from './pages/post/GlobalFeed.tsx'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main/>,
+    element: <Main />,
     children: [
       {
         index: true,
-        element: <GlobalFeed/>
+        element: <Login />, // landing page is login
+      },
+      {
+        path: "/feed",
+        element: <GlobalFeed />,
       },
       {
         path: "/register",
-        element: <Register/>
-      },
-      {
-        path: "/login",
-        element: <Login/>
+        element: <Register />,
       },
       {
         path: "/post/create",
-        element: <CreatePost/>
-      }
-     
-    ]
-    
-  }
-])
-
+        element: <CreatePost />,
+      },
+    ],
+  },
+]);
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
