@@ -9,7 +9,19 @@ const baseUrl =
 
 export const apiSlice = createApi({
     reducerPath: 'apiSlice',
-    baseQuery: fetchBaseQuery({baseUrl: `${baseUrl}`,credentials: "include",}),
+    baseQuery: fetchBaseQuery({
+        baseUrl: `${baseUrl}`,
+        credentials: "include",
+        prepareHeaders: (headers) => {
+            const userInfo = localStorage.getItem("userInfo")
+              ? JSON.parse(localStorage.getItem("userInfo")!)
+              : null;
+            if (userInfo?.token) {
+              headers.set("Authorization", `Bearer ${userInfo.token}`);
+            }
+            return headers;
+          },
+    }),
     endpoints: () => ({}),
     
 })
