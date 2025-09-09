@@ -9,7 +9,7 @@ if(import.meta.env.VITE_MODE==="development"){
     API_URL = import.meta.env.VITE_LOCAL_API_URL
 }
 if(import.meta.env.VITE_MODE==="production"){
-    API_URL = import.meta.env.VITE_API_URL!
+    API_URL = import.meta.env.VITE_API_URL
 }
 
 function GlobalFeed() {
@@ -70,7 +70,7 @@ function GlobalFeed() {
 
   return (
     <div className="relative min-h-screen py-6 px-4 bg-gradient-to-br from-indigo-100 via-white to-pink-100 overflow-hidden">
-      {/* Decorative blobs */}
+
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
       <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
 
@@ -83,7 +83,7 @@ function GlobalFeed() {
               key={post._id}
               className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-6 border border-gray-100 hover:shadow-2xl transition"
             >
-              {/* Title & Visibility */}
+              
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3 gap-2">
                 <h2 className="text-xl font-semibold text-gray-900 truncate">{post.title || "Untitled Post"}</h2>
                 <span className="text-xs px-3 py-1 rounded-full bg-gray-200 text-gray-700">
@@ -91,10 +91,10 @@ function GlobalFeed() {
                 </span>
               </div>
 
-              {/* Content */}
+          
               <p className="text-gray-700 mb-4 whitespace-pre-wrap">{post.content}</p>
 
-              {/* Images */}
+              
               {post.postImageUrl && post.postImageUrl?.length > 0 && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
                   {post.postImageUrl.map((url, i) => (
@@ -108,7 +108,7 @@ function GlobalFeed() {
                 </div>
               )}
 
-              {/* Tags */}
+              
               {post.tag && post.tag?.length > 0 && (
                 <div className="flex flex-wrap gap-2 mb-4">
                   {post.tag.map((t, i) => (
@@ -122,7 +122,7 @@ function GlobalFeed() {
                 </div>
               )}
 
-              {/* Footer */}
+              
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 text-gray-600">
                 <span className="font-medium">👤 {post.post_author?.name}</span>
                 <div className="flex items-center gap-2">
@@ -143,7 +143,7 @@ function GlobalFeed() {
                 </div>
               </div>
 
-              {/* Summary */}
+              
               {summaries[post._id] && (
                 <div className="mt-4 bg-gray-50 p-4 rounded-lg text-gray-800 italic border-l-4 border-indigo-400">
                   {summaries[post._id]}

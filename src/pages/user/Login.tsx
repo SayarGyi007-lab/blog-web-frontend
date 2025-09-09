@@ -62,9 +62,9 @@ function Login() {
           Login to continue your journey
         </p>
 
-        {/* Form */}
+        
         <form onSubmit={handleSubmit(submit)} className="mt-6 space-y-5">
-          {/* Email */}
+         
           <div>
             <label
               htmlFor="email"
@@ -90,7 +90,7 @@ function Login() {
             )}
           </div>
 
-          {/* Password */}
+        
           <div>
             <label
               htmlFor="password"
@@ -116,7 +116,7 @@ function Login() {
             )}
           </div>
 
-          {/* Submit */}
+        
           <button
             type="submit"
             disabled={isLoading || isSubmitting}
@@ -127,7 +127,6 @@ function Login() {
           </button>
         </form>
 
-        {/* Footer */}
         <p className="text-center text-sm text-gray-700 mt-6">
           Don’t have an account?{" "}
           <Link

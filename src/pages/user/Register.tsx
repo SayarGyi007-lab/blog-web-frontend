@@ -58,9 +58,9 @@ function Register() {
           Join us and start your journey
         </p>
 
-        {/* Form */}
+    
         <form onSubmit={handleSubmit(submit)} className="mt-6 space-y-5">
-          {/* Name */}
+         
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
               Name
@@ -80,7 +80,7 @@ function Register() {
             )}
           </div>
 
-          {/* Email */}
+        
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
               Email
@@ -100,7 +100,7 @@ function Register() {
             )}
           </div>
 
-          {/* Password */}
+        
           <div>
             <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
               Password
@@ -120,7 +120,7 @@ function Register() {
             )}
           </div>
 
-          {/* Profile Image */}
+        
           <div>
             <label htmlFor="profileImageUrl" className="block text-sm font-medium text-gray-700 mb-1">
               Profile Image
@@ -142,7 +142,7 @@ function Register() {
             )}
           </div>
 
-          {/* Submit */}
+          
           <button
             type="submit"
             disabled={isSubmitting || isLoading}
@@ -153,7 +153,7 @@ function Register() {
           </button>
         </form>
 
-        {/* Footer */}
+   
         <p className="text-center text-sm text-gray-700 mt-6">
           Already have an account?{" "}
           <Link to="/login" className="text-indigo-600 font-medium hover:underline">

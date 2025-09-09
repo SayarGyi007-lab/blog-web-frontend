@@ -44,17 +44,17 @@ function CreatePost() {
 
   return (
     <div className="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-100 via-white to-pink-100 overflow-hidden">
-      {/* Decorative blobs */}
+     
       <div className="absolute -top-20 -left-20 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
       <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
 
-      {/* Create Post Card */}
+     
       <div className="w-full max-w-2xl bg-white/70 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/30">
         <h2 className="text-3xl font-extrabold text-center text-gray-900">Create Post ✍️</h2>
         <p className="text-center text-gray-600 mt-2">Share your thoughts with the world</p>
 
         <form onSubmit={handleSubmit(submit)} className="mt-6 space-y-5">
-          {/* Title */}
+         
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Title</label>
             <div className="relative">
@@ -70,7 +70,7 @@ function CreatePost() {
             {errors.title && <p className="text-red-600 text-sm">{errors.title.message}</p>}
           </div>
 
-          {/* Content */}
+          
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Content</label>
             <textarea
@@ -83,7 +83,7 @@ function CreatePost() {
             {errors.content && <p className="text-red-600 text-sm">{errors.content.message}</p>}
           </div>
 
-          {/* Tag */}
+       
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Tag</label>
             <div className="relative">
@@ -99,7 +99,7 @@ function CreatePost() {
             {errors.tag && <p className="text-red-600 text-sm">{errors.tag.message}</p>}
           </div>
 
-          {/* Visibility */}
+         
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Visibility</label>
             <div className="relative">
@@ -117,7 +117,7 @@ function CreatePost() {
             {errors.visibility && <p className="text-red-600 text-sm">{errors.visibility.message}</p>}
           </div>
 
-          {/* Post Images */}
+        
           <div>
             <label htmlFor="postImageUrl" className="block text-sm font-medium text-gray-700 mb-1">
               Photos (max 10)
@@ -144,7 +144,7 @@ function CreatePost() {
           </div>
 
 
-          {/* Submit Button */}
+     
           <button
             type="submit"
             disabled={isSubmitting || isLoading}
