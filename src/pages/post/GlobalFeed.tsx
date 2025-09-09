@@ -69,7 +69,7 @@ function GlobalFeed() {
   };
 
   return (
-    <div className="relative min-h-screen py-6 px-4 bg-gradient-to-br from-indigo-100 via-white to-pink-100 overflow-hidden">
+    <div className="relative min-h-screen py-6 px-4 bg-gradient-to-br from-indigo-100 via-white to-pink-100 overflow-hidden rounded-4xl">
 
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
       <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
